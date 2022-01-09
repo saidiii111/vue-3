@@ -32,11 +32,6 @@
       "plugin:vue/vue3-essential",
       "eslint:recommended"
     ],
-    "eslint.validate": [
-      "javascript",
-      "javascriptreact",
-      "vue"
-    ],
     "parserOptions": {
       "parser": "babel-eslint"
     },
