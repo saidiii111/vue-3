@@ -1,26 +1,32 @@
 <template>
+
  <h1>Dc hero</h1>
     <ul>
-     <li v-for="(hero, index) in dcHeros" v-bind:key="index">
+     <li v-for="(hero, index) in dcHeros" :key="index">
        {{ index }} : {{ hero.name }}
        </li>
     </ul>
+    <input :[attribute]="newHero" />
+    <button :disabled="isDisabled">Add Hero</button>
 </template>
 
 
 <script>
 export default {
-data(){
+data(){  
   return {
+    attribute: "value",
+    isDisabled: true,
+    newHero: "AquaMan",
     dcHeros : [
      { name: "SuperGirl" },
-     { name: "SuperGirl" },
-     { name: "SuperGirl" },
-     { name: "SuperGirl" },
-     { name: "SuperGirl" },
+     { name: "Flash" },
+     { name: "BatMan" },
+     { name: "Arrow" },
+     { name: "SuperMan" },  
   ],
-};
-},
+        }   ;
+ },
 };
 </script>
 
