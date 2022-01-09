@@ -6,8 +6,8 @@
        {{ index }} : {{ hero.name }}
        </li>
     </ul>
-    <input :[attribute]="newHero" />
-    <button :disabled="isDisabled">Add Hero</button>
+    <input v-model.number="newHero" />
+    <button>Add Hero</button>
 </template>
 
 
@@ -15,9 +15,7 @@
 export default {
 data(){  
   return {
-    attribute: "value",
-    isDisabled: true,
-    newHero: "AquaMan",
+    newHero: "AquaMan77",
     dcHeros : [
      { name: "SuperGirl" },
      { name: "Flash" },
