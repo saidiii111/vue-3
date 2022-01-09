@@ -2,12 +2,19 @@
 
  <h1>Dc hero</h1>
     <ul>
-     <li v-for="(hero, index) in dcHeros" :key="index">
-       {{ index }} : {{ hero.name }}
+       <li v-for="(hero, index) in dcHeros" :key="index">
+          {{ hero.name }}
        </li>
     </ul>
-    <input v-model.number="newHero" />
-    <button>Add Hero</button>
+
+    <form @submit.prevent="dcHeros.push({ name: newHero });
+    newHero='';
+    "
+    >
+       <input v-model="newHero" placeholder="Type Hero Name here" />
+       <button type="submit">Add Hero</button>
+    </form>
+
 </template>
 
 
@@ -27,6 +34,8 @@ data(){
  },
 };
 </script>
+  
+
 
 <style>
 body{
