@@ -7,11 +7,8 @@
        </li>
     </ul>
 
-    <form @submit.prevent="dcHeros.push({ name: newHero });
-    newHero='';
-    "
-    >
-       <input v-model="newHero" placeholder="Type Hero Name here" />
+    <form @submit.prevent="addHero">
+       <input v-model.trim="newHero" placeholder="Type Hero Name here" />
        <button type="submit">Add Hero</button>
     </form>
 
@@ -20,19 +17,28 @@
 
 <script>
 export default {
+  methods:{
+   addHero() {
+     if(this.newHero !== "")
+     this.dcHeros.push({ name: this.newHero });
+     this.newHero = "";
+   },
+  },
+
 data(){  
   return {
     newHero: "AquaMan77",
     dcHeros : [
-     { name: "SuperGirl" },
-     { name: "Flash" },
-     { name: "BatMan" },
-     { name: "Arrow" },
-     { name: "SuperMan" },  
-  ],
-        }   ;
- },
-};
+        { name: "SuperGirl" },
+        { name: "Flash" },
+        { name: "BatMan" },
+        { name: "Arrow" },
+        { name: "SuperMan" },  
+              ],
+        };
+    },
+ };
+
 </script>
   
 
