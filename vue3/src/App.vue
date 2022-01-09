@@ -2,14 +2,14 @@
 
  <h1>Dc hero {{ herosCount }}</h1>
     <ul>
-       <li v-for="(hero, index) in dcHeros" :key="index">
+       <li v-for="(hero, index) in dcHeros" :key="hero.name">
           <div>{{ hero.name }} <button v-on:click="remove(index)">X</button></div>
        </li>
     </ul>
 
     <form @submit.prevent="addHero">
        <input v-model.trim="newHero" placeholder="Type Hero Name here" />
-       <button type="submit">Add Hero</button>
+       <button class="bg-info" type="submit">Add Hero</button>
     </form>
 </template>
 
