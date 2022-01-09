@@ -1,6 +1,6 @@
 <template>
 
- <h1>Dc hero</h1>
+ <h1>Dc hero {{ herosCount }}</h1>
     <ul>
        <li v-for="(hero, index) in dcHeros" :key="index">
           {{ hero.name }}
@@ -11,12 +11,17 @@
        <input v-model.trim="newHero" placeholder="Type Hero Name here" />
        <button type="submit">Add Hero</button>
     </form>
-
+    <small>Total Heros in the list is  {{ herosCount }}</small>
 </template>
 
 
 <script>
 export default {
+  computed: {
+     herosCount() {
+   return this.dcHeros.length + ' Heros';
+     },
+  },
   methods:{
    addHero() {
      if(this.newHero !== "")
